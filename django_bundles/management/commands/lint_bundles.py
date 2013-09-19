@@ -35,6 +35,7 @@ class Command(BaseCommand):
 
     def lint_file(self, bundle_type, file_path, iter_input=None):
         command = bundles_settings.BUNDLES_LINTING[bundle_type]['command']
+        print 'command unformatted', command
 
         input_file = None
         stdin = None
@@ -53,6 +54,7 @@ class Command(BaseCommand):
                 filename = file_path
 
             command = command.format(infile=filename)
+            print 'command formatted', command
         else:
             if iter_input:
                 stdin = iter_input
