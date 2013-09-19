@@ -12,6 +12,7 @@ def run_process(cmd, stdin=None, iterate_stdin=True, output_chunk_size=1024, she
     This is a modification of subprocess.Popen.communicate that accepts an iterable stdin and is itself a generator for stdout
     """
     try:
+        print cmd
         p = subprocess.Popen(cmd, shell=shell, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         if stdin:
